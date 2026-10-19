@@ -6,8 +6,13 @@ name: Release
 # a changelog section for the version, and a current compatibility matrix.
 
 on:
-  # On this personal fork, run only when explicitly requested.
-  workflow_dispatch: {}
+  # Personal fork: manual-only; upstream CI remains unchanged.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version being released (e.g. 0.1.1); must match [workspace.package] version in Cargo.toml'
+        required: false
+
 permissions:
   contents: write
 
