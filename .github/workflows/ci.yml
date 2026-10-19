@@ -1,14 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-  schedule:
-    # Every Monday at 06:00 UTC — see the scheduled-sdk-check job below.
-    - cron: '0 6 * * 1'
+  # On this personal fork, run only when explicitly requested.
   workflow_dispatch: {}
-
 env:
   CARGO_TERM_COLOR: always
   # Deny rustdoc warnings in every job: `cargo doc`, the workspace

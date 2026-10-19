@@ -1,10 +1,8 @@
 name: Docs
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-
+  # On this personal fork, run only when explicitly requested.
+  workflow_dispatch: {}
 jobs:
   check:
     name: changelog + process docs
